@@ -1,0 +1,33 @@
+"dados":
+[
+	{
+		"versiculo": "Salmos 19:1",
+		"mensagem": "O céu anuncia a glória de Deus e nos mostra aquilo que as suas mãos fizeram."
+	},
+	{
+		"versiculo": "Lucas 6:38",
+		"mensagem": "Deem aos outros, e Deus dará a vocês. Ele será generoso, e as bênçãos que ele lhes dará serão tantas, que vocês não poderão segurá-las nas suas mãos. A mesma medida que vocês usarem para medir os outros Deus usará para medir vocês."
+	},
+	{
+		"versiculo": "Hebreus 10:24",
+		"mensagem": "Pensemos uns nos outros a fim de ajudarmos todos a terem mais amor e a fazerem o bem."
+	},
+	{
+		"versiculo": "1João 5:14",
+		"mensagem": "Quando estamos na presença de Deus, temos coragem por causa do seguinte: se pedimos alguma coisa de acordo com a sua vontade, temos a certeza de que ele nos ouve."
+	},
+	{
+		"versiculo": "Romanos 5:3",
+		"mensagem": "E também nos alegramos nos sofrimentos, pois sabemos que os sofrimentos produzem a paciência."
+	},
+	{
+		"versiculo": "João 14:6",
+		"mensagem": "Jesus respondeu: Eu sou o caminho, a verdade e a vida; ninguém pode chegar até o Pai a não ser por mim."
+	},
+	{
+		"versiculo": "João 3:17",
+		"mensagem": "Pois Deus mandou o seu Filho para salvar o mundo e não para julgá-lo."
+	},
+]
+
+export default dados
