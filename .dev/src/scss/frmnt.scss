@@ -293,6 +293,12 @@ html {
 			padding: 12px 0;
 			padding-left: 23px;
 			border: 1px solid #fff;
+			br {
+				display: none;
+				@include media(s) {
+					display: block;
+				}
+			}
 			label {
 				color: #fff;
 				font-family: "Work Sans";
@@ -310,7 +316,7 @@ html {
 				font-family: "Work Sans";
 				font-style: normal;
 				font-weight: 400;
-				font-size: 18px;
+				font-size: 16px;
 				line-height: 150%;
 				@include media(s) {
 					font-size: 14px;
