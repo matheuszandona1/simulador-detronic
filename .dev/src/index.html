@@ -176,8 +176,8 @@
 					</div>
 				</div>
 				<div class="btn-container center">
-					<a href="#simulador" class="btn-2">Calcule agora sua economia <svg width="25" height="8" viewBox="0 0 25 8"
-							fill="none" xmlns="http://www.w3.org/2000/svg">
+					<a href="#simulador" class="button three">Calcule agora sua economia <svg width="25" height="8"
+							viewBox="0 0 25 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M24.3536 4.35355C24.5488 4.15829 24.5488 3.84171 24.3536 3.64645L21.1716 0.464466C20.9763 0.269204 20.6597 0.269204 20.4645 0.464466C20.2692 0.659728 20.2692 0.976311 20.4645 1.17157L23.2929 4L20.4645 6.82843C20.2692 7.02369 20.2692 7.34027 20.4645 7.53553C20.6597 7.7308 20.9763 7.7308 21.1716 7.53553L24.3536 4.35355ZM0 4.5H24V3.5H0V4.5Z"
 								fill="#fff" />
@@ -202,7 +202,16 @@
 						<input type="text" placeholder="E-mail" id="email">
 					</div>
 					<div class="simulador__form--input">
-						<input type="text" placeholder="Cidade/Região" id="cidade">
+						<label for="estado">Estado:</label>
+						<select id="estado">
+							<option value="">Selecione um estado</option>
+							<option value="MG">Minas Gerais</option>
+						</select>
+						<br>
+						<label for="cidade">Cidade:</label>
+						<select id="cidade">
+							<option value="">Selecione um estado primeiro</option>
+						</select>
 					</div>
 					<div class="simulador__form--input">
 						<p class="simulador__form--input_text margin">Sua conta é residencial ou comercial?</p>
@@ -218,7 +227,7 @@
 						</div>
 					</div>
 
-					<div class="simulador__form--input">
+					<div class="simulador__form--input" style="padding-right: 23px;">
 						<p class="simulador__form--input_text">Sua conta costuma vir com qual valor?</p>
 						<div class="valor">
 							R$
@@ -230,7 +239,7 @@
 							<div id="sinalizador"></div>
 						</div>
 
-						<p id="mensagem"></p> <!-- Adicionado para exibir a mensagem abaixo da barra -->
+						<p id="mensagem"></p>
 					</div>
 					<div class="btn-container center">
 						<button type="submit" class="button two">Quero simular <svg width="25" height="8" viewBox="0 0 25 8"
@@ -248,11 +257,11 @@
 			</div>
 		</section>
 		<section class="club">
+			<h2 class="club__title">
+				Dá pra economizar mais ainda?
+			</h2>
 			<div class="club__container">
 				<div class="club__content">
-					<h2 class="club__title">
-						Dá pra economizar mais ainda?
-					</h2>
 					<p class="club__desc">
 						Sempre dá, uai! Ao se tornar um cliente
 						<b>
@@ -276,7 +285,7 @@
 						Ah, e não é só economia na conta de energia, viu? Você também ajuda o planeta, com 6.499 mil toneladas de
 						redução de CO² na atmosfera por ano.
 					</p>
-					<div class="btn-container">
+					<div class="btn-container center">
 						<a href="https://www.clubecerto.com.br" class="button one">Conheça o Clube Certo <svg width="25" height="8"
 								viewBox="0 0 25 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
@@ -297,8 +306,8 @@
 		<div class="footer__container ">
 			<div class="footer__content">
 				<div class="col contact-deal">
-					<div class="logo-branca"><img src="https://detronicenergia.com/wp-content/uploads/2022/11/detronic-logo.png"
-							alt="" style="width:180px; margin-bottom: 30px;"></div>
+					<div class="logo-branca"><img src="./assets/logo-branca.svg" alt="" style="width:180px; margin-bottom: 30px;">
+					</div>
 					<ul class="footer__socials">
 						<li class="social-link">
 							<a href="https://www.facebook.com/DetronicEnergia/" target="_blank">
@@ -403,12 +412,12 @@
 				</div>
 			</div>
 			<hr class="divisor">
-			<div class="row" style="margin-top:30px;clear:both;text-align:left;border:0px solid red;">
-				<div class="col-6 copyright">
+			<div class="political" style="margin-top:30px;clear:both;text-align:left;border:0px solid red;">
+				<div class=" copyright">
 					<span>
-						2023 © Detronic. Todos os direitos reservados.
+						2023 © Detronic. <br> Todos os direitos reservados.
 				</div>
-				<div class="col-6 privacy" style="text-align: end;">
+				<div class=" privacy">
 					<a class="" href="#" target="_blank">
 						Política de Privacidade
 					</a>

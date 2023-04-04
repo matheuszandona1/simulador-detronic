@@ -30,6 +30,16 @@ html {
 			}
 		}
 	}
+	&.three {
+		background: #385fa5;
+		color: #fff;
+		svg {
+			margin-left: 10px;
+		}
+		&:hover {
+			background: #5eb66f;
+		}
+	}
 	font-family: "Work Sans";
 	font-style: normal;
 	font-weight: 400;
@@ -61,6 +71,11 @@ html {
 }
 
 .header {
+	.fixed-top {
+		@include media(s) {
+			position: absolute;
+		}
+	}
 	&__desktop {
 		max-width: 1240px;
 		width: 100%;
@@ -99,16 +114,29 @@ html {
 	padding: 100px;
 	padding-right: 50px;
 	padding-top: 178px;
+	@include media(s) {
+		padding: 24px;
+		padding-top: 100px;
+	}
 	&__container {
 		display: flex;
 		gap: 40px;
 		color: #fff;
 		font-family: "Encode Sans";
 		justify-content: center;
+		@include media(s) {
+			flex-wrap: wrap;
+			gap: 30px;
+		}
 	}
 	&__content {
 		max-width: 703px;
 		width: 100%;
+		@include media(s) {
+			.btn-container {
+				text-align: center;
+			}
+		}
 	}
 	&__title {
 		max-width: 600px;
@@ -122,6 +150,10 @@ html {
 			font-weight: 800;
 			color: #f9b900;
 		}
+		@include media(s) {
+			font-size: 40px;
+			line-height: 50px;
+		}
 	}
 	&__desc {
 		font-style: normal;
@@ -132,10 +164,18 @@ html {
 		b {
 			font-weight: 800;
 		}
+		@include media(s) {
+			font-size: 24px;
+			line-height: 32px;
+			text-align: center;
+		}
 	}
 }
 .content {
 	padding: 100px 0px;
+	@include media(s) {
+		padding: 50px 24px;
+	}
 	&__container {
 		max-width: 1240px;
 		margin: 0 auto;
@@ -149,6 +189,10 @@ html {
 		font-size: 32px;
 		line-height: 40px;
 		margin-bottom: 24px;
+		@include media(s) {
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 	&__desc {
 		font-family: "Work Sans";
@@ -161,12 +205,19 @@ html {
 		b {
 			font-weight: 700;
 		}
+		@include media(s) {
+			padding: 0;
+			font-size: 16px;
+		}
 	}
 	&__cards {
 		display: flex;
 		justify-content: center;
 		gap: 16px;
 		margin: 50px auto;
+		@include media(s) {
+			flex-wrap: wrap;
+		}
 		&--card {
 			width: 298px;
 			height: 334px;
@@ -174,6 +225,10 @@ html {
 			border: 3px solid #5eb66f;
 			border-radius: 20px;
 			position: relative;
+			@include media(s) {
+				width: 100%;
+				height: 256px;
+			}
 
 			&-green_text {
 				font-family: "Encode Sans";
@@ -191,6 +246,12 @@ html {
 				font-size: 24px;
 				line-height: 30px;
 				color: #6a6a69;
+				@include media(s) {
+					font-family: "Work Sans";
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 150%;
+				}
 			}
 		}
 	}
@@ -199,6 +260,9 @@ html {
 .simulador {
 	background: #385fa5;
 	padding: 100px 0px;
+	@include media(s) {
+		padding: 50px 24px;
+	}
 	&__container {
 		max-width: 1240px;
 		margin: 0 auto;
@@ -212,6 +276,10 @@ html {
 		line-height: 40px;
 		color: #ffffff;
 		margin-bottom: 40px;
+		@include media(s) {
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 	&__form {
 		display: flex;
@@ -225,6 +293,40 @@ html {
 			padding: 12px 0;
 			padding-left: 23px;
 			border: 1px solid #fff;
+			label {
+				color: #fff;
+				font-family: "Work Sans";
+				font-style: normal;
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 150%;
+				margin-bottom: 0px;
+			}
+			select {
+				appearance: none;
+				background-color: transparent;
+				border: none;
+				color: #fff;
+				font-family: "Work Sans";
+				font-style: normal;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 150%;
+				@include media(s) {
+					font-size: 14px;
+				}
+				&:focus-visible {
+					outline: none;
+				}
+				&:focus {
+					background: transparent;
+				}
+				&:hover {
+					option {
+						background: #385fa5;
+					}
+				}
+			}
 			&_text {
 				font-family: "Work Sans";
 				font-style: normal;
@@ -232,8 +334,15 @@ html {
 				font-size: 18px;
 				line-height: 150%;
 				color: #ffffff;
+				@include media(s) {
+					padding-right: 50px;
+				}
 				&.margin {
 					margin-bottom: 52px;
+					margin-bottom: 30px;
+					@include media(s) {
+						padding-right: 80px;
+					}
 				}
 			}
 			.label {
@@ -245,6 +354,7 @@ html {
 				color: #ffffff;
 				display: flex;
 				align-items: center;
+
 				cursor: pointer;
 				&.residencial {
 					margin-right: 24px;
@@ -356,13 +466,30 @@ html {
 	padding: 100px 0px;
 	background: #5eb66f;
 	color: #fff;
+	@include media(s) {
+		padding: 50px 24px;
+	}
 	&__container {
 		max-width: 1240px;
 		margin: 0 auto;
 		display: flex;
+		justify-content: space-between;
+		@include media(s) {
+			flex-wrap: wrap;
+		}
 	}
 	&__content {
-		padding-top: 61px;
+		@include media(s) {
+			padding-top: 0px;
+			order: 2;
+		}
+	}
+
+	&__img {
+		margin-top: -122px;
+		@include media(s) {
+			margin-top: 0px;
+		}
 	}
 	&__title {
 		font-family: "Encode Sans";
@@ -370,7 +497,18 @@ html {
 		font-weight: 700;
 		font-size: 32px;
 		line-height: 40px;
+		max-width: 1240px;
+		margin: 0 auto;
 		margin-bottom: 24px;
+		margin-top: 0px;
+		padding-top: 122px;
+		@include media(s) {
+			padding-top: 0px;
+			font-size: 24px;
+			line-height: 32px;
+			text-align: center;
+			padding: 0 30px;
+		}
 	}
 	&__desc {
 		font-family: "Work Sans";
@@ -382,6 +520,11 @@ html {
 		margin-bottom: 24px;
 		b {
 			font-weight: 600;
+		}
+		@include media(s) {
+			text-align: center;
+			margin-top: 24px;
+			font-size: 16px;
 		}
 	}
 }
@@ -396,6 +539,9 @@ html {
 		position: absolute;
 		right: 0;
 		top: 0;
+		@include media(s) {
+			display: none;
+		}
 	}
 	&__container {
 		max-width: 1240px;
@@ -405,6 +551,13 @@ html {
 	}
 	&__content {
 		display: flex;
+		@include media(s) {
+			display: block;
+			padding: 0px 9px;
+			.logo-branca {
+				text-align: center;
+			}
+		}
 	}
 	&__socials {
 		list-style-type: none;
@@ -413,6 +566,9 @@ html {
 		padding-left: 0px;
 		gap: 10px;
 		margin-bottom: 30px;
+		@include media(s) {
+			justify-content: center;
+		}
 		.social-link {
 			background: #fff;
 
@@ -433,6 +589,9 @@ html {
 		line-height: 20px;
 		display: flex;
 		color: #ffffff;
+		@include media(s) {
+			margin-bottom: 50px;
+		}
 	}
 	&__contato {
 		color: #fff;
@@ -452,6 +611,7 @@ html {
 			margin-bottom: 0px;
 		}
 	}
+
 	.new-container {
 		font-family: "Encode Sans";
 		font-style: normal;
@@ -471,6 +631,18 @@ html {
 		font-size: 16px;
 		line-height: 20px;
 		color: #ffffff;
+		span {
+			br {
+				display: none;
+				@include media(s) {
+					display: block;
+				}
+			}
+		}
+		@include media(s) {
+			padding: 0;
+			margin-bottom: 30px;
+		}
 	}
 	.privacy {
 		font-family: "Encode Sans";
@@ -479,10 +651,44 @@ html {
 		font-size: 16px;
 		line-height: 20px;
 		color: #ffffff;
+		@include media(s) {
+			padding: 0;
+			text-align: left;
+		}
 		&:hover {
 			a {
 				color: #fff;
 			}
+		}
+	}
+	.col {
+		@include media(s) {
+			padding: 0px 15px;
+			flex-shrink: 0;
+			width: 100%;
+			&.sessao-salmos {
+				@include media(s) {
+					padding: 30px 15px;
+					border-top: 1px solid #173f86;
+					border-bottom: 1px solid #173f86;
+					flex-shrink: 0;
+					display: block;
+				}
+			}
+		}
+	}
+	.divisor {
+		@include media(s) {
+			display: none;
+		}
+	}
+	.political {
+		display: flex;
+		justify-content: space-between;
+		@include media(s) {
+			padding: 0 24px;
+			flex-direction: column;
+			text-align: left;
 		}
 	}
 }

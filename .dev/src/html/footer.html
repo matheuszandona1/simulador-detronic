@@ -1,4 +1,35 @@
 <script src="./../node_modules/jquery/dist/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+  integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./js/text-gen.js" type="module"></script>
 <script src="./js/frmnt.js" type="module"></script>
 <script src="./js/calculo.js" type="module"></script>
+<script>
+  $(document).ready(function () {
+    $('#telefone').mask('(00) 0000-0000');
+  });
+  $(document).ready(function () {
+    // Quando o estado é selecionado, preenche o select de cidades correspondente
+    $("#estado").change(function () {
+      const estadoSelecionado = $(this).val();
+      if (estadoSelecionado === "") {
+        // Se nenhum estado for selecionado, limpa o select de cidades
+        $("#cidade").html("<option value=''>Selecione um estado primeiro</option>");
+      } else if (estadoSelecionado === "MG") {
+        // Se Minas Gerais for selecionado, busca a lista de municípios correspondente
+        $.getJSON("https://servicodados.ibge.gov.br/api/v1/localidades/estados/MG/municipios", function (data) {
+          // Preenche o select de cidades com os municípios correspondentes
+          let options = "";
+          for (const cidade of data) {
+            options += `<option value="${cidade.nome}">${cidade.nome}</option>`;
+          }
+          $("#cidade").html(options);
+        });
+      } else {
+        // Se qualquer outro estado for selecionado, limpa o select de cidades
+        $("#cidade").html("<option value=''>Selecione um estado primeiro</option>");
+      }
+    });
+  });
+</script>
