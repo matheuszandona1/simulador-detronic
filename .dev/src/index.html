@@ -208,10 +208,12 @@
 							<option value="MG">Minas Gerais</option>
 						</select>
 						<br>
-						<label for="cidade">Cidade:</label>
-						<select id="cidade">
-							<option value="">Selecione um estado primeiro</option>
-						</select>
+
+						<label for="cidade" class="hidden" aria-hidden="true" id="cidade-label">Cidade:
+							<select id="cidade" class="hidden" aria-hidden="true">
+								<option value="">Selecione um estado primeiro</option>
+							</select>
+						</label>
 					</div>
 					<div class="simulador__form--input">
 						<p class="simulador__form--input_text margin">Sua conta é residencial ou comercial?</p>

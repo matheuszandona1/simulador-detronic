@@ -16,6 +16,7 @@
       if (estadoSelecionado === "") {
         // Se nenhum estado for selecionado, limpa o select de cidades
         $("#cidade").html("<option value=''>Selecione um estado primeiro</option>");
+        $("#cidade-label, #cidade").addClass("hidden");
       } else if (estadoSelecionado === "MG") {
         // Se Minas Gerais for selecionado, busca a lista de municípios correspondente
         $.getJSON("https://servicodados.ibge.gov.br/api/v1/localidades/estados/MG/municipios", function (data) {
@@ -24,12 +25,15 @@
           for (const cidade of data) {
             options += `<option value="${cidade.nome}">${cidade.nome}</option>`;
           }
-          $("#cidade").html(options);
+          $("#cidade").removeClass("hidden").html(options);
+          $("#cidade-label").removeClass("hidden").attr("aria-hidden", "false");
         });
       } else {
         // Se qualquer outro estado for selecionado, limpa o select de cidades
         $("#cidade").html("<option value=''>Selecione um estado primeiro</option>");
+        $("#cidade-label, #cidade").addClass("hidden");
       }
     });
   });
+
 </script>
