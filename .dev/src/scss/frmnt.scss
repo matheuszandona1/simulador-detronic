@@ -243,6 +243,7 @@ html {
 				color: #ffffff;
 				display: flex;
 				align-items: center;
+				cursor: pointer;
 				&.residencial {
 					margin-right: 24px;
 				}
@@ -273,17 +274,9 @@ html {
 				border-radius: 50%;
 				margin-right: 16px;
 				transition: all 0.2s ease-in;
-				position: relative;
-				&::before {
-					left: 0;
-					right: 0;
-					margin: 0 auto;
-					width: 15px;
-					height: 15px;
-					background: transparent;
-				}
 				&:checked {
-					background-color: black;
+					background: #5eb66f;
+					border: 1px solid #5eb66f;
 				}
 			}
 			#container {
