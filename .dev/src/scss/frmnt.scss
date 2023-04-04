@@ -232,7 +232,9 @@ html {
 				font-size: 18px;
 				line-height: 150%;
 				color: #ffffff;
-				margin-bottom: 30px;
+				&.margin {
+					margin-bottom: 52px;
+				}
 			}
 			.label {
 				font-family: "Work Sans";
@@ -281,10 +283,11 @@ html {
 			}
 			#container {
 				width: 100%;
-				height: 30px;
-				background-color: #ccc;
+				height: 3px;
+				background-color: #fff;
 				position: relative;
 				user-select: none;
+				margin-top: 15px;
 			}
 
 			#barra {
@@ -293,20 +296,48 @@ html {
 				// background-color: #4caf50;
 				position: absolute;
 			}
+			.valor {
+				display: flex;
+				align-items: center;
+				font-family: "Work Sans";
+				font-style: normal;
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 150%;
+				text-align: center;
+				color: #ffffff;
+				justify-content: flex-end;
 
+				input {
+					appearance: none;
+					background: transparent;
+					border: none;
+					outline: none;
+					font-size: 24px;
+					line-height: 150%;
+					color: #fff;
+					margin: 0;
+					width: 95px;
+					margin-left: 8px;
+					cursor: pointer;
+					&::-webkit-inner-spin-button,
+					&::-webkit-outer-spin-button {
+						-webkit-appearance: none;
+						margin: 0;
+					}
+				}
+			}
 			#sinalizador {
-				width: 20px;
-				height: 100%;
-				background-color: #ff9800;
+				width: 35px;
+				height: 35px;
+				background-color: #5eb66f;
+				border-radius: 50%;
+				border: 5px solid #385fa5;
 				position: absolute;
 				left: 20;
+				top: -15px;
 				cursor: pointer;
 				z-index: 2;
-			}
-
-			#valor {
-				font-size: 18px;
-				margin-top: 10px;
 			}
 
 			#mensagem {

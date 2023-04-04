@@ -205,7 +205,8 @@
 						<input type="text" placeholder="Cidade/Região">
 					</div>
 					<div class="simulador__form--input">
-						<p class="simulador__form--input_text">Sua conta costuma vir com qual valor?</p>
+						<p class="simulador__form--input_text margin">Sua conta é residencial ou comercial?
+						</p>
 						<div class="d-flex">
 							<label for="residencial" class="label residencial">
 								<input type="radio" id="residencial" name="tipoImovel">
@@ -219,7 +220,11 @@
 					</div>
 					<div class="simulador__form--input">
 						<p class="simulador__form--input_text">Sua conta costuma vir com qual valor?</p>
-						<input type="number" id="valor" min="100" value="100" oninput="atualizarBarra()" />
+						<div class="valor">
+							R$
+							<input type="number" id="valor" min="100" value="100" oninput="atualizarBarra()" />
+
+						</div>
 						<div id="container" onmousedown="iniciarArrasto(event)">
 							<div id="barra"></div>
 							<div id="sinalizador"></div>

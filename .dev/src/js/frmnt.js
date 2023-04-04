@@ -1,5 +1,5 @@
 const valorMinimo = 100
-const valorMaximo = 1000
+const valorMaximo = 10000
 const posicaoInicialSinalizador = 20 // Adicionado para considerar a posição inicial do sinalizador
 let arrastando = false
 
@@ -66,6 +66,11 @@ function atualizarBarra() {
 	barra.style.width = porcentagem + "%"
 	sinalizador.style.left = posicaoInicialSinalizador + (porcentagem * (larguraContainer - sinalizador.clientWidth)) / 100 + "px"
 }
+const sinalizador = document.getElementById("sinalizador")
+sinalizador.addEventListener("mousedown", iniciarArrasto)
+
+const valor = document.getElementById("valor")
+valor.addEventListener("input", atualizarBarra)
 
 const dados = require("./dados")
 
