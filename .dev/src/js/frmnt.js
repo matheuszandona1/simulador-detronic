@@ -3,6 +3,9 @@ const valorMaximo = 10000
 const posicaoInicialSinalizador = 20 // Adicionado para considerar a posição inicial do sinalizador
 let arrastando = false
 
+const sinalizador = document.getElementById("sinalizador")
+sinalizador.addEventListener("mousedown", iniciarArrasto)
+
 function iniciarArrasto(event) {
 	event.preventDefault()
 	arrastando = true
@@ -66,26 +69,15 @@ function atualizarBarra() {
 	barra.style.width = porcentagem + "%"
 	sinalizador.style.left = posicaoInicialSinalizador + (porcentagem * (larguraContainer - sinalizador.clientWidth)) / 100 + "px"
 }
-const sinalizador = document.getElementById("sinalizador")
-sinalizador.addEventListener("mousedown", iniciarArrasto)
 
 const valor = document.getElementById("valor")
 valor.addEventListener("input", atualizarBarra)
 
-const dados = require("./dados")
-
-const diaAtual = new Date().getDay() + 1
-const versiculoDoDia = dados[diaAtual - 1]
-
-if (versiculoDoDia) {
-	const mensagemEls = document.querySelectorAll(".new-mensagem")
-	const reflexaoEls = document.querySelectorAll(".new-reflexao-sub")
-
-	mensagemEls.forEach(function (mensagemEl) {
-		mensagemEl.textContent = versiculoDoDia.mensagem
+const labels = document.querySelectorAll(".simulador__form--input label")
+labels.forEach((label) => {
+	const input = label.querySelector("input")
+	label.addEventListener("click", () => {
+		input.checked = true
+		input.dispatchEvent(new Event("input"))
 	})
-
-	reflexaoEls.forEach(function (reflexaoEl) {
-		reflexaoEl.textContent = versiculoDoDia.versiculo
-	})
-}
+})

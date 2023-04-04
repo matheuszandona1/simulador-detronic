@@ -342,7 +342,8 @@ html {
 
 			#mensagem {
 				font-size: 14px;
-				color: red;
+				color: #fff;
+				margin-top: 20px;
 			}
 		}
 		.btn-container {
@@ -389,6 +390,7 @@ html {
 	background-color: #385fa5;
 	padding: 60px 0px;
 	position: relative;
+	overflow: hidden;
 	&:after {
 		content: url("../assets/sol.svg");
 		position: absolute;
