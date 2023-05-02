@@ -3,8 +3,7 @@
 		"dev": "parcel serve src/index.html",
 		"static": "parcel build src/index.html --public-url='./' --no-cache --no-content-hash --no-optimize",
 		"watch": "parcel watch src/index.html --dist-dir='../public' --public-url='./' --log-level verbose --no-cache --no-content-hash",
-		"prebuild": "rm -rf ../public",
-		"build": "parcel build src/index.html --dist-dir='../public' --public-url='./' --no-cache --no-content-hash --no-source-maps && cp src/data.json ../public/"
+		"build": "parcel build src/index.html --dist-dir='../public' --public-url='./' --no-cache --no-content-hash --no-source-maps && cp ../public/"
 	},
 	"devDependencies": {
 		"@parcel/transformer-sass": "^2.7.0",
@@ -20,7 +19,8 @@
 		"sharp": "^0.29.3"
 	},
 	"dependencies": {
-		"jquery": "^3.6.3"
+		"jquery": "^3.6.3",
+		"postcss": "^8.4.23"
 	},
 	"staticFiles": {
 		"staticPath": "dados"
