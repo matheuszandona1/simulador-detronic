@@ -173,7 +173,8 @@ html {
 	}
 	&.typ{
 		background: url('../assets/bg-capao-typ.jpg') no-repeat center;
-		background-size: cover;		
+		background-size: cover;	
+		display: none;	
 		.capao__content{
 			max-width: 100%;
 			.descontos {
@@ -204,7 +205,11 @@ html {
 				}
 			}
 		}
-		&.pj {		
+		&.pf{
+			display: block;
+		}
+		&.pj {	
+			display: block;	
 			.capao__container {
 				margin: 0 auto;
 				padding: 0 100px;
