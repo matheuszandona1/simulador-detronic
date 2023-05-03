@@ -295,6 +295,9 @@ html {
 			border-left: 3px solid #5eb66f;
 			position: relative;
 			text-align: center;
+			@include media(s) {
+				border: none;
+            }
 			&::after {
 				content: url('../assets/arrow-card.jpg');
 				position: absolute;
@@ -302,11 +305,15 @@ html {
 				top: 50%;
 				transform: translateY(-50%);
 				z-index: 2;
+				@include media(s) {display: none;}
 			}
 			&:last-child {
 				border-right: 3px solid #5eb66f;
 				&:after{
 					content: none;
+				}
+				@include media(s) {
+					border: none;
 				}
 			}
 			@include media(s) {
@@ -443,6 +450,10 @@ html {
 				padding: 40px 80px;
 				p, input::placeholder {
 					color: #385FA5;
+				}
+				@include media(s) {
+					
+					padding: 40px;
 				}
 			}
 			&_text {
