@@ -1,10 +1,10 @@
 <script>
-  var intTipoConta = 0 
+	var intTipoConta = 0
 
 	function handleSubmit() {
 		const tipoConta = localStorage.getItem("tipoConta")
 		const body = tipoConta == "residencial" ? document.querySelector("#residencial") : document.querySelector("#comercial")
-    intTipoConta = tipoConta == "residencial" ? 0 : 1
+		intTipoConta = tipoConta == "residencial" ? 0 : 1
 		if (tipoConta === "residencial") {
 			body.classList.add("pf")
 		} else if (tipoConta === "comercial") {
@@ -12,21 +12,43 @@
 		}
 	}
 	handleSubmit()
-	const valorConta = localStorage.getItem("valorConta")
+	function atualizarValores(desconto, valorMensal, valorAnual) {
+		spanDesconto = document.querySelector("#textDescount");
+		// Atualiza o valorFinalDescontoMensal no localStorage
+		localStorage.setItem("valorFinalDescontoMensal", valorMensal)
+
+		// Atualiza o valor mensal no HTML
+		elementoValorMensal[intTipoConta].innerText = valorMensal.toFixed(2)
+
+		// Atualiza o valor anual no HTML
+		elementoValorAnual[intTipoConta].innerText = (valorAnual * 12).toFixed(2)
+
+		// Atualiza o texto do span
+		spanDesconto.innerText = `${desconto}%`
+	}
+
+	const valorFinalDescontoMensalMin = parseFloat(localStorage.getItem("valorFinalDescontoMensalMin"))
+	const valorFinalDescontoMensalMed = parseFloat(localStorage.getItem("valorFinalDescontoMensalMed"))
 	const valorFinalDescontoMensal = parseFloat(localStorage.getItem("valorFinalDescontoMensal"))
-	const valorFinalDescontoAnual = valorFinalDescontoMensal * 12
 
-	let elementoValorMensal = document.querySelectorAll("#valorMensal")
-	console.log(elementoValorMensal)
-	if (elementoValorMensal) {
-		elementoValorMensal[intTipoConta].innerText = valorFinalDescontoMensal.toFixed(2)
-	}
+	const elementoValorMensal = document.querySelectorAll("#valorMensal")
+	const elementoValorAnual = document.querySelectorAll("#valorAnual")
 
-	let elementoValorAnual = document.querySelectorAll("#valorAnual")
+	// Adicione os eventos de clique para os botões de plano
+	plano10.addEventListener("click", () => {
+		atualizarValores(10, valorFinalDescontoMensalMin, valorFinalDescontoMensalMin)
+	})
 
-	if (elementoValorAnual) {
-		elementoValorAnual[intTipoConta].innerText = valorFinalDescontoAnual.toFixed(2)
-	}
+	plano12.addEventListener("click", () => {
+		atualizarValores(12, valorFinalDescontoMensalMed, valorFinalDescontoMensalMed)
+	})
+
+	plano15.addEventListener("click", () => {
+		atualizarValores(15, valorFinalDescontoMensal, valorFinalDescontoMensal)
+	})
+
+	// Configure o plano de 15% como padrão
+	atualizarValores(15, valorFinalDescontoMensal, valorFinalDescontoMensal)
 </script>
 <script src="./../node_modules/jquery/dist/jquery.js"></script>
 <script src="./js/text-gen.js" type="module"></script>

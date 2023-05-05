@@ -28,11 +28,11 @@
 		</section>
 		<section class="capao typ" id="comercial">
 			<div class="capao__container">
-				<div class="capao__content text-left">
+				<div class="capao__content text-center">
 					<h1 class="capao__title">
 						Simulação concluída!
 					</h1>
-					<h2>Você pode economizar <strong>até 15%</strong> na sua conta de luz.</h2>
+					<h2>Você pode economizar <strong>até <span id="textDescount">15%</span></strong> na sua conta de luz.</h2>
 					<h2>Com a <strong>assinatura de energia solar da Detronic</strong>, a sua economia será de:</h2>
 					<div class="descontos d-flex">
 						<div class="valor">R$ <span id="valorMensal"></span> por mês</div>
@@ -40,18 +40,21 @@
 					</div>
 				</div>
 				<div class="capao__content">
-					<h2>Compare a economia proporcionada por plano:</h2>
-					<div class="plano d-flex align-items-center">
-						<span>Plano 10%</span>
-						<p>contrato sem fidelidade.</p>
-					</div>
-					<div class="plano d-flex align-items-center">
-						<span>Plano 12%</span>
-						<p>contrato com fidelidade de 12 meses.</p>
-					</div>
-					<div class="plano d-flex align-items-center">
-						<span>Plano 15%</span>
-						<p>contrato com fidelidade de 24 meses.</p>
+					<h2>Clique e compare a economia proporcionada por plano:</h2>
+					<div class="capao__content--container d-flex">
+						<div class="plano text-center">
+							<button id="plano10">Plano 10%</button>
+							<p>contrato sem fidelidade.</p>
+						</div>
+						<div class="plano text-center">
+							<button id="plano12">Plano 12%</button>
+							<p>contrato com fidelidade de 12 meses.</p>
+						</div>
+						<div class="plano text-center">
+							<button id="plano15">Plano 15%</button>
+							<p>contrato com fidelidade de 24 meses.</p>
+						</div>
+
 					</div>
 					<div class="btn-container">
 						<a href="#simulador" class="button one">Quero assinar agora <svg width="25" height="8" viewBox="0 0 25 8" fill="none" xmlns="http://www.w3.org/2000/svg">
