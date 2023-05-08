@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-	const valorMinimo = 100;
+	const valorMinimo = 120;
 	const valorMaximo = 10000;
 	const posicaoInicialSinalizador = 20;
 	let arrastando = false;
