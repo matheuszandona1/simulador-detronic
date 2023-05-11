@@ -342,6 +342,9 @@ html {
 			}
 			&:first-child {
 			border-left: 3px solid #5eb66f;
+			@include media(s){
+				border: none;
+			}
 			}
 			&:last-child {
 				border-right: 3px solid #5eb66f;
