@@ -32,24 +32,22 @@ function calcularDesconto() {
 	const valorConta = parseFloat(document.querySelector("#valor").value)
 
 	const consumoReal = valorConta - tarifas[tipoConta].tarifaIluminacao
-	const consumoKWH =  consumoReal /  tarifas[tipoConta].tarifaCheia
+	const consumoKWH = consumoReal / tarifas[tipoConta].tarifaCheia
 	const valorEnergiaDesconto = consumoKWH - tarifas[tipoConta].tarifaRede
 	const valorConsumoDesconto = valorEnergiaDesconto * tarifas[tipoConta].tarifaDesconto * tarifas[tipoConta].descontoMax
 	const valorConsumoDescontoMed = valorEnergiaDesconto * tarifas[tipoConta].tarifaDesconto * tarifas[tipoConta].descontoMed
 	const valorConsumoDescontoMin = valorEnergiaDesconto * tarifas[tipoConta].tarifaDesconto * tarifas[tipoConta].descontoMin
 
-	
 	const valorPisCofins = tarifas[tipoConta].tarifaPisCofins * valorEnergiaDesconto
 	const valorCustoDisponibilidade = tarifas[tipoConta].tarifaRede * tarifas[tipoConta].tarifaCheia
 
-	const valorFinalCusto =  valorConsumoDesconto + valorPisCofins + valorCustoDisponibilidade + tarifas[tipoConta].tarifaIluminacao
-	const valorFinalCustoMed =  valorConsumoDescontoMed + valorPisCofins + valorCustoDisponibilidade + tarifas[tipoConta].tarifaIluminacao
-	const valorFinalCustoMin =  valorConsumoDescontoMin + valorPisCofins + valorCustoDisponibilidade + tarifas[tipoConta].tarifaIluminacao
+	const valorFinalCusto = valorConsumoDesconto + valorPisCofins + valorCustoDisponibilidade + tarifas[tipoConta].tarifaIluminacao
+	const valorFinalCustoMed = valorConsumoDescontoMed + valorPisCofins + valorCustoDisponibilidade + tarifas[tipoConta].tarifaIluminacao
+	const valorFinalCustoMin = valorConsumoDescontoMin + valorPisCofins + valorCustoDisponibilidade + tarifas[tipoConta].tarifaIluminacao
 
 	const valorFinalDescontoMensal = valorConta - valorFinalCusto
 	const valorFinalDescontoMensalMed = valorConta - valorFinalCustoMed
 	const valorFinalDescontoMensalMin = valorConta - valorFinalCustoMin
-
 
 	localStorage.setItem("valorConta", valorConta.toFixed(2))
 	localStorage.setItem("valorFinalDescontoMensal", valorFinalDescontoMensal.toFixed(2))
@@ -58,8 +56,6 @@ function calcularDesconto() {
 
 	localStorage.setItem("tipoConta", tipoConta)
 }
-
-
 
 document.querySelector(".simulador__form").addEventListener("submit", function (event) {
 	event.preventDefault()
