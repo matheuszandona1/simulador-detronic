@@ -16,7 +16,7 @@ function calcularDesconto() {
 			tarifaDesconto: 0.80324,
 			tarifaIluminacao: 20,
 			tarifaRede: 50,
-			descontoMax: 0.9,
+			descontoMax: 0.85,
 		},
 		comercial: {
 			tarifaCheia: 0.83394,
